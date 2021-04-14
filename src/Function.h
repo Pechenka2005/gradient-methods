@@ -9,22 +9,27 @@
 */
 
 #include <vector>
+#include "MatrixOperation.h"
 
-class Function {
+class Function : MatrixOperation {
 private:
-    std::vector<std::vector<double>> matrix;
-    std::vector<double> coefficients;
+    static std::vector<std::vector<double>> A;
+    static std::vector<double> B, coefficients;
+    static double C;
     int n;
+public:
+    Function(const std::vector<std::vector<double>> &a, const std::vector<double> &b,
+             const std::vector<double> &coefficients, double c);
+
 public:
     /*
      * The method that evaluates the function
      * param1: argument to evaluate the function
      */
-    static double evaluate(std::vector<double> x);
-    std::vector<std::vector<double>> getMatrix();
-    std::vector<double> getLineMatrix(int index);
+    static double evaluate(const std::vector<double>& x);
     int getN() const;
-    double getCoefficient(int index);
+    static double getCoefficient(int index);
+    static std::vector<double> getGradient(const std::vector<double>& x);
 };
 
 #endif //GRADIENT_METHODS_FUNCTION_H
