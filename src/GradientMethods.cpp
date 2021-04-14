@@ -4,6 +4,11 @@
 
 #include "GradientMethods.h"
 
-double GradientMethods::findGradient() {
-    return 0;
+double GradientMethods::findGradient(std::vector<double> a, std::vector<double> x, double b, int n) {
+    double ans = 0;
+    for (int i = 0; i < n; i++) {
+        ans += (a[i] * x[i]);
+    }
+
+    return ans + b;
 }

@@ -4,11 +4,13 @@
 
 #include "GradientDescent.h"
 
-double GradientDescent::evaluate(double learningRate, double eps, double x) {
-    double gradientFunction = findGradient();
+double GradientDescent::evaluate(double learningRate, double eps, std::vector<double> x) {
+    double gradientFunction = findGradient(Function::getLineMatrix(0), x,
+                                           Function::getCoefficient(0), Function::getN());
     double fx = Function::evaluate(x), fy;
+    int pos = 0;
     while (gradientFunction > eps) {
-        double y = x - learningRate * gradientFunction;
+        std::vector<double> y = x - learningRate * gradientFunction;
         fy = Function::evaluate(y);
         if (fy < fx) {
             x = y;
@@ -16,7 +18,9 @@ double GradientDescent::evaluate(double learningRate, double eps, double x) {
         } else {
             learningRate /= 2;
         }
-        gradientFunction = findGradient();
+        pos++;
+        gradientFunction = findGradient(Function::getLineMatrix(pos), x,
+                                        Function::getCoefficient(pos), Function::getN());;
     }
     return 0;
 

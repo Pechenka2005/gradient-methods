@@ -5,8 +5,10 @@
 #ifndef GRADIENT_METHODS_GRADIENTMETHODS_H
 #define GRADIENT_METHODS_GRADIENTMETHODS_H
 
+#include <vector>
+
 class GradientMethods {
 protected:
-    double findGradient();
+    double findGradient(std::vector<double> a, std::vector<double> x, double b, int n);
 };
 #endif //GRADIENT_METHODS_GRADIENTMETHODS_H
