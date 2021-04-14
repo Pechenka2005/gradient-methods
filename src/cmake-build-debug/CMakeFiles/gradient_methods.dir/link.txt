@@ -1,3 +1,0 @@
-C:\Users\llSoK\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.8194.17\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\gradient_methods.dir/objects.a
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\gradient_methods.dir/objects.a @CMakeFiles\gradient_methods.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\gradient_methods.dir/objects.a -Wl,--no-whole-archive  -o gradient_methods.exe -Wl,--out-implib,libgradient_methods.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\gradient_methods.dir\linklibs.rsp
