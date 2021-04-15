@@ -8,9 +8,10 @@
 #include <vector>
 
 class GradientDescent : Function {
-
+private:
+    int countIteration;
 public:
-   double evaluate(double learningRate, double eps, std::vector<double> x);
+    std::vector<double> evaluate(double learningRate, double eps, std::vector<double> x);
 };
 
 

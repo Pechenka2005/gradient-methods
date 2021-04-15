@@ -27,7 +27,13 @@ public:
      * param1: argument to evaluate the function
      */
     static double evaluate(const std::vector<double>& x);
+
+protected:
     int getN() const;
+    std::vector<std::vector<double>> getA();
+
+    static std::vector<double> createNewValue(const std::vector<double>& x, const std::vector<double>& gradient, double learningRate);
+    static double getGradientValue(const std::vector<double>& gradient);
     static double getCoefficient(int index);
     static std::vector<double> getGradient(const std::vector<double>& x);
 };

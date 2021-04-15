@@ -3,4 +3,4 @@ project(gradient_methods)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(gradient_methods main.cpp GradientDescent.cpp GradientDescent.h Function.cpp MatrixOperation.cpp MatrixOperation.h)
+add_executable(gradient_methods main.cpp GradientDescent.cpp GradientDescent.h Function.cpp MatrixOperation.cpp MatrixOperation.h ConjugateGradients.cpp ConjugateGradients.h)

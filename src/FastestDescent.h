@@ -6,13 +6,13 @@
 #define GRADIENT_METHODS_FASTESTDESCENT_H
 
 #include "Function.h"
-#include "GradientMethods.h"
+#include <cmath>
 
-class FastestDescent : Function, GradientMethods {
+class FastestDescent : Function {
 private:
-    double gradient = 0;
-
+    int countIteration;
+    double evaluateLearningRate(std::vector<double> gradient, std::vector<double> x, double eps);
 public:
-    double evaluate(double eps, double x);
+    std::vector<double> evaluate(double eps, std::vector<double> x);
 };
 #endif //GRADIENT_METHODS_FASTESTDESCENT_H
