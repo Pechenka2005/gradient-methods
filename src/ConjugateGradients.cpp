@@ -25,3 +25,8 @@ std::vector<double> ConjugateGradients::evaluate(double eps, std::vector<double>
     } while (Function::getGradientValue(gradient) > eps);
     return x;
 }
+
+ConjugateGradients::ConjugateGradients(Function function) {
+    this->function = function;
+    countIteration = 0;
+}

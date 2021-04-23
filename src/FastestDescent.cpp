@@ -18,13 +18,13 @@ std::vector<double> FastestDescent::evaluate(double eps, std::vector<double> x) 
     return x;
 }
 
-double FastestDescent::evaluateLearningRate(std::vector<double> gradient, std::vector<double> x, double eps) {
+double FastestDescent::evaluateLearningRate(const std::vector<double>& gradient, std::vector<double> x, double eps) {
     double phi = 1.6180339887, x1, x2, y1, y2, left = 0, right = 0.01;
     x1 = right - ((right - left) / phi);
     x2 = left + ((right - left) / phi);
     y1 = Function::evaluate(Function::createNewValue(x, gradient, x1));
     y2 = Function::evaluate(Function::createNewValue(x, gradient, x2));
-    while (abs(right - left) > eps) {
+    while (std::abs(right - left) > eps) {
         if (y1 <= y2) {
             right = x2;
             x2 = x1;
@@ -41,4 +41,8 @@ double FastestDescent::evaluateLearningRate(std::vector<double> gradient, std::v
     }
     return (right + left) / 2;
 }
+
+FastestDescent::FastestDescent(Function function) {
+    this->function = function;
+    countIteration = 0;
 }

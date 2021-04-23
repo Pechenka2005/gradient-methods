@@ -13,9 +13,10 @@
 class ConjugateGradients : Function, MatrixOperation {
 private:
     int countIteration;
-
+    Function function;
 public:
-    std::vector<double> evaluate (double eps, std::vector<double> x);
+    explicit ConjugateGradients(Function function);
+    static std::vector<double> evaluate (double eps, std::vector<double> x);
 };
 
 

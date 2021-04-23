@@ -16,10 +16,10 @@ std::vector<double> GradientDescent::evaluate(double learningRate, double eps, s
             std::vector<double> y = Function::createNewValue(x, gradient, learningRate);
             double Fy = Function::evaluate(y);
             if (Fx < Fy) {
+                countIteration++;
                 x = y;
                 Fx = Fy;
                 break;
-                countIteration++;
             } else {
                 learningRate /= 2;
             }
@@ -27,4 +27,9 @@ std::vector<double> GradientDescent::evaluate(double learningRate, double eps, s
     } while (Function::getGradientValue(gradient) >= eps);
     return x;
 
+}
+
+GradientDescent::GradientDescent(Function function){
+    this->function = function;
+    countIteration = 0;
 }

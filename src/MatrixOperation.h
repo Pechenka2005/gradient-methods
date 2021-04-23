@@ -8,7 +8,7 @@
 #include <vector>
 
 class MatrixOperation {
-protected:
+public:
     static std::vector<double> mul(std::vector<double> a, std::vector<std::vector<double>> b);
     static std::vector<double> mul(std::vector<std::vector<double>> a,  std::vector<double> b);
     static double mul(std::vector<double> a, std::vector<double> b);
