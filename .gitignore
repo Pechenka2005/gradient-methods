@@ -1,2 +1,6 @@
-/.idea
-/src/cmake-build-debug/
+src/.idea
+src/cmake-build-debug
+report/report.aux
+report/report.log
+report/report.synctex.gz
+
