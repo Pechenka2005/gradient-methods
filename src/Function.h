@@ -11,12 +11,12 @@
 #include <vector>
 #include "MatrixOperation.h"
 
-class Function : MatrixOperation {
+class Function {
 private:
     static std::vector<std::vector<double>> A;
     static std::vector<double> B;
     static double C;
-    int n{};
+    static int n;
 public:
     Function(const std::vector<std::vector<double>> &a, const std::vector<double> &b, double c);
 
@@ -30,7 +30,7 @@ public:
     static double evaluate(const std::vector<double>& x);
 
 protected:
-    int getN() const;
+    static int getN();
     static std::vector<std::vector<double>> getA();
 
     static std::vector<double> createNewValue(const std::vector<double>& x, const std::vector<double>& gradient, double learningRate);

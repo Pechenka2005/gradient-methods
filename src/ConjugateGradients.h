@@ -10,9 +10,9 @@
 #include <vector>
 #include <cmath>
 
-class ConjugateGradients : Function, MatrixOperation {
+class ConjugateGradients : Function {
 private:
-    int countIteration;
+    static int countIteration;
     Function function;
 public:
     explicit ConjugateGradients(Function function);

@@ -3,6 +3,8 @@
 //
 
 #include "ConjugateGradients.h"
+#include "MatrixOperation.h"
+
 
 std::vector<double> ConjugateGradients::evaluate(double eps, std::vector<double> x) {
     std::vector<double> gradient = Function::getGradient(x);

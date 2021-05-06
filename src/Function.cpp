@@ -8,7 +8,7 @@ double Function::evaluate(const std::vector<double>& x) {
     return 0.5 * MatrixOperation::mul(MatrixOperation::mul(x, A), x) + MatrixOperation::mul(B, x) + C;
 }
 
-int Function::getN() const {
+int Function::getN() {
     return n;
 }
 
