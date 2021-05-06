@@ -3,19 +3,22 @@
 //
 
 #include "GradientDescent.h"
+#include <utility>
 #include <vector>
+#include <iostream>
 
-std::vector<double> GradientDescent::evaluate(double learningRate, double eps, std::vector<double> x) {
+std::vector<double> GradientDescent::evaluate(double learningRate, double eps, std::vector<double>& x) {
 
     std::vector<double> gradient;
-    countIteration = 0;
-    double Fx = Function::evaluate(x);
+    int countIteration = 0;
+    double Fx = function.evaluate(x);
     do {
-        gradient = Function::getGradient(x);
+        gradient = function.getGradient(x);
+        countIteration++;
         while (true) {
-            std::vector<double> y = Function::createNewValue(x, gradient, learningRate);
-            double Fy = Function::evaluate(y);
-            if (Fx < Fy) {
+            std::vector<double> y = function.createNewValue(x, gradient, learningRate);
+            double Fy = function.evaluate(y);
+            if (Fy < Fx) {
                 countIteration++;
                 x = y;
                 Fx = Fy;
@@ -24,12 +27,11 @@ std::vector<double> GradientDescent::evaluate(double learningRate, double eps, s
                 learningRate /= 2;
             }
         }
-    } while (Function::getGradientValue(gradient) >= eps);
-    return x;
+    } while (function.getGradientValue(gradient) >= eps && countIteration <= 1000);
+    return std::cout << "CountIteration: " << countIteration << "\n", x;
 
 }
 
 GradientDescent::GradientDescent(Function function){
-    this->function = function;
-    countIteration = 0;
+    this->function = std::move(function);
 }

@@ -13,29 +13,27 @@
 
 class Function {
 private:
-    static std::vector<std::vector<double>> A;
-    static std::vector<double> B;
-    static double C;
-    static int n;
+     std::vector<std::vector<double>> A;
+     std::vector<double> B;
+     double C;
+     int n;
 public:
     Function(const std::vector<std::vector<double>> &a, const std::vector<double> &b, double c);
 
     Function();
 
-public:
     /*
      * The method that evaluates the function
      * param1: argument to evaluate the function
      */
-    static double evaluate(const std::vector<double>& x);
+    double evaluate(const std::vector<double>& x);
 
-protected:
-    static int getN();
-    static std::vector<std::vector<double>> getA();
+    int getN() const;
+    std::vector<std::vector<double>> getA();
 
-    static std::vector<double> createNewValue(const std::vector<double>& x, const std::vector<double>& gradient, double learningRate);
-    static double getGradientValue(const std::vector<double>& gradient);
-    static std::vector<double> getGradient(const std::vector<double>& x);
+    std::vector<double> createNewValue(const std::vector<double>& x, const std::vector<double>& gradient, double learningRate);
+    double getGradientValue(const std::vector<double>& gradient);
+    std::vector<double> getGradient(const std::vector<double>& x);
 };
 
 #endif //GRADIENT_METHODS_FUNCTION_H

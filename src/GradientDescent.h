@@ -9,13 +9,10 @@
 
 class GradientDescent : Function {
 private:
-
-    static int countIteration;
     Function function;
 public:
     explicit GradientDescent(Function function);
-public:
-    static std::vector<double> evaluate(double learningRate, double eps, std::vector<double> x);
+    std::vector<double> evaluate(double learningRate, double eps, std::vector<double>& x);
 
 };
 

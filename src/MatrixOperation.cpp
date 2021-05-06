@@ -11,7 +11,7 @@ std::vector<double> MatrixOperation::mul(std::vector<double> a, std::vector<std:
     std::vector<double> c(n);
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            c[i] += a[j] * b[j][i];
+            c[i] += a[j] * b[i][j];
         }
     }
     return c;

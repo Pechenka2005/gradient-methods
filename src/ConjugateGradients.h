@@ -12,11 +12,10 @@
 
 class ConjugateGradients : Function {
 private:
-    static int countIteration;
     Function function;
 public:
     explicit ConjugateGradients(Function function);
-    static std::vector<double> evaluate (double eps, std::vector<double> x);
+    std::vector<double> evaluate (double eps, std::vector<double> x);
 };
 
 

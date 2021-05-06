@@ -8,15 +8,15 @@ double Function::evaluate(const std::vector<double>& x) {
     return 0.5 * MatrixOperation::mul(MatrixOperation::mul(x, A), x) + MatrixOperation::mul(B, x) + C;
 }
 
-int Function::getN() {
+int Function::getN() const {
     return n;
 }
 
 Function::Function(const std::vector<std::vector<double>> &a, const std::vector<double> &b, double c) {
-    Function::A = a;
-    Function::B = b;
-    Function::C = c;
-    Function::n = (int)a.size() * 1000;
+    this->A = a;
+    this->B = b;
+    this->C = c;
+    this->n = (int)a.size() * 1000;
 
 }
 
@@ -25,7 +25,7 @@ std::vector<double> Function::getGradient(const std::vector<double> &x) {
 }
 
 std::vector<double> Function::createNewValue(const std::vector<double>& x, const std::vector<double>& gradient,
-                                                    double learningRate) {
+                                             double learningRate) {
     int n = x.size();
     std::vector<double> coordinates(n);
     for (int i = 0; i < n; i++) {
